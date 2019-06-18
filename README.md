@@ -1,2 +1,2 @@
 # IntroToMachineLearning
-This repository holds for basic Machine Learning info and structures for a machine learning class.
+This repository holds basic machine learning info and structures for a machine learning class.
