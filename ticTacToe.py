@@ -31,7 +31,7 @@ class Player:
     
     Example: player1 = Player('X')
     
-    See line 75 and 76 for the implementation
+    See line 184 and 185 for the implementation
     ''' 
     def __init__(self, marker: str, name: str):
         self.piece = marker
@@ -49,6 +49,8 @@ i.e.  0 | 1 | 2
 
 Each digit represents a spot and will be used by each player
 to select the spot they wish to place their piece on.
+
+See line 179 for the implementation
 ---------------------------------------------------------------
 '''
 class Board:
@@ -162,7 +164,7 @@ class Board:
 '''
 It is common practice to run the 'main' code in a 'main' function.
 
-Here is the 'main' code for tic-tac-toe is doing:
+Here is what the 'main' code for tic-tac-toe is doing:
     1. Create a board
     2. Assign players
     3. Start a game loop
@@ -189,7 +191,7 @@ def main():
     board.printBoard()
 
     # moveTracker keeps track of the number of moves
-    # if 9 pieces has been played an no one has one, it must be a tie
+    # if 9 pieces has been played and no one has won, it must be a tie
     moveTracker = 0
 
     # Sets the current player to 'p1'
@@ -198,7 +200,7 @@ def main():
     currentPlayer = p1
 
     # This is the main game loop
-    # Will repeat until 9 pieces have been placed or someone has one
+    # Will repeat until 9 pieces have been placed or someone has won
     while moveTracker < 9:
         print("Ok,", currentPlayer.name, ", make your move by typing a number on the board")
 
