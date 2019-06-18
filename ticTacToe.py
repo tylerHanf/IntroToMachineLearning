@@ -13,8 +13,9 @@ thought process.
 
 '''
 --------------------------------------------------------------
-The player class defines which piece the player will put down.
-i.e. either an 'X' or an 'O'.
+The player class defines which piece the player will put down
+i.e. either an 'X' or an 'O', and the name of the player ("Player 1",
+or "Player 2")
 --------------------------------------------------------------
 '''
 class Player:
@@ -22,16 +23,16 @@ class Player:
     The __init__ method is called once an instance
     of the class is made. 
     
-    When the Player class is called, the __init__ method
+    When the Player class is made as an instance, the __init__ method
     will execute and set the 'piece' variable to the contents
-    of 'marker'.
+    of 'marker', and the name to the self.name variable.
     
     In order to make an instance of the class Player,
-    set a variable (such as player1) to Player(*insert piece character*)
+    set a variable (such as player1) to Player(*insert piece character*, *insert player name*)
     
-    Example: player1 = Player('X')
+    Example: player1 = Player('X', "Player 1")
     
-    See line 184 and 185 for the implementation
+    See line 185 and 186 for the implementation
     ''' 
     def __init__(self, marker: str, name: str):
         self.piece = marker
@@ -50,7 +51,7 @@ i.e.  0 | 1 | 2
 Each digit represents a spot and will be used by each player
 to select the spot they wish to place their piece on.
 
-See line 179 for the implementation
+See line 180 for the implementation
 ---------------------------------------------------------------
 '''
 class Board:
