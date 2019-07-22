@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from numpy import random as random
+from numpy import random
 
 '''
 --------------------------------------------------
@@ -33,7 +33,7 @@ pause time both based on user input.
 --------------------------------------------------
 '''
 class Graph:
-    #Standard font to be changed if desired
+    # Standard font to be changed if desired
     STANDARD_FONT = "Helvetica"
     '''
     Init function
@@ -63,12 +63,10 @@ class Graph:
         else:
             plt.plot(data, color)
         plt.title(title)
-        #allows space between subplots
+        # Allows space between subplots
         plt.tight_layout()
 
-    '''
-    Used to pause plotting 
-    '''
+    # Used to pause plotting
     def pause(self):
         plt.pause(self.pauseTime)
 
@@ -205,25 +203,25 @@ Creates a neuron and trains the data.
 ------------------------------------------
 '''
 def main():
-    #number of subplots for graph
+    # Number of subplots for graph
     NUM_SUB_PLOTS = 3
-    #number of data points for function
+    # Number of data points for function
     NUM_OF_DATA_POINTS = 200
 
     coefficient = int(input("Enter a coefficient: "))    
     numTrainSteps = int(input("Enter the number of training steps: "))
     pauseTime = float(input("Enter the pause time between each train step: "))
 
-    #initializes the graph 
+    # Initializes the graph 
     graph = Graph(NUM_SUB_PLOTS, pauseTime)
     
-    #Sets training input data
+    # Sets training input data
     x = [i/100 for i in range(NUM_OF_DATA_POINTS)]
 
-    #Sets training output data
+    # Sets training output data
     y = [func(coefficient, i/100) for i in range(NUM_OF_DATA_POINTS)]
 
-    #Creates a neuron
+    # Creates a neuron
     neuron = Neuron(1, str(coefficient) + "*x", graph)
 
     #divide each entry by 100 
@@ -231,11 +229,11 @@ def main():
     x = np.asarray([x])/100
     y = np.asarray([y])/100
 
-    #reshape the arrays
+    # Reshape the arrays
     x = x.T
     y = y.T
 
-    #train the input data x, with output data y
+    # Train the input data x, with output data y
     neuron.train(numTrainSteps, x, y)
 
 
